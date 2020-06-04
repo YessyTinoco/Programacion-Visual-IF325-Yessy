@@ -147,6 +147,11 @@ Public Class Form1
             txtPrecio.Text = precioUnitario
             txtTotal.Text = total
 
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Está seguro de realizar la compra?", "COMPRA", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.No) Then
+            Me.Close()
+        End If
 
     End Sub
 
