@@ -24,12 +24,31 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Toolmensaje = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.btnComprar = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmMak = New System.Windows.Forms.ComboBox()
+        Me.cmSkin = New System.Windows.Forms.ComboBox()
+        Me.checkMak = New System.Windows.Forms.CheckBox()
+        Me.checkSkin = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedNum = New System.Windows.Forms.MaskedTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dateTime = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -38,75 +57,271 @@ Partial Class Form1
         Me.CheckBoxMasterCard = New System.Windows.Forms.CheckBox()
         Me.CheckBoxVISA = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedCredito = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.comboNacionalidad = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.rbMas = New System.Windows.Forms.RadioButton()
+        Me.rbFeme = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Toolmensaje = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TabControl1.SuspendLayout()
+        Me.TabControlPrincipal = New System.Windows.Forms.TabControl()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.rbCompra = New System.Windows.Forms.RadioButton()
+        Me.rbDatos = New System.Windows.Forms.RadioButton()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControlPrincipal.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'errorIcono
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(25, 21)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(618, 366)
-        Me.TabControl1.TabIndex = 0
+        Me.errorIcono.ContainerControl = Me
+        '
+        'Toolmensaje
+        '
+        Me.Toolmensaje.IsBalloon = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage2.Controls.Add(Me.PictureBox4)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.btnSalir)
+        Me.TabPage2.Controls.Add(Me.btnNuevo)
+        Me.TabPage2.Controls.Add(Me.GroupBox4)
+        Me.TabPage2.Controls.Add(Me.GroupBox3)
+        Me.TabPage2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(629, 387)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Compra Producto "
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(20, 21)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(80, 58)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 6
+        Me.PictureBox4.TabStop = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Marsttar Demo", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(420, 53)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(189, 20)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "La belleza no mira, solo es mirada"
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.Red
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(424, 330)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(93, 23)
+        Me.btnSalir.TabIndex = 4
+        Me.btnSalir.Text = "SALIR"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(424, 289)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(93, 23)
+        Me.btnNuevo.TabIndex = 3
+        Me.btnNuevo.Text = "NUEVO"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Bisque
+        Me.GroupBox4.Controls.Add(Me.txtTotal)
+        Me.GroupBox4.Controls.Add(Me.txtPrecio)
+        Me.GroupBox4.Controls.Add(Me.btnComprar)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.Label10)
+        Me.GroupBox4.Location = New System.Drawing.Point(335, 80)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(264, 191)
+        Me.GroupBox4.TabIndex = 1
+        Me.GroupBox4.TabStop = False
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(101, 184)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(68, 21)
+        Me.txtCantidad.TabIndex = 5
+        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Location = New System.Drawing.Point(125, 91)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(122, 21)
+        Me.txtTotal.TabIndex = 9
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(39, 184)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(56, 15)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Cantidad"
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.Location = New System.Drawing.Point(125, 37)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(122, 21)
+        Me.txtPrecio.TabIndex = 6
+        Me.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnComprar
+        '
+        Me.btnComprar.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnComprar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnComprar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnComprar.Location = New System.Drawing.Point(89, 154)
+        Me.btnComprar.Name = "btnComprar"
+        Me.btnComprar.Size = New System.Drawing.Size(93, 23)
+        Me.btnComprar.TabIndex = 2
+        Me.btnComprar.Text = "COMPRAR"
+        Me.btnComprar.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(8, 94)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(111, 15)
+        Me.Label12.TabIndex = 7
+        Me.Label12.Text = "TOTAL                   L."
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 37)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(113, 15)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Precio Unitario     L."
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Bisque
+        Me.GroupBox3.Controls.Add(Me.txtCantidad)
+        Me.GroupBox3.Controls.Add(Me.cmMak)
+        Me.GroupBox3.Controls.Add(Me.cmSkin)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.checkMak)
+        Me.GroupBox3.Controls.Add(Me.checkSkin)
+        Me.GroupBox3.Location = New System.Drawing.Point(24, 80)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(281, 242)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Productos"
+        '
+        'cmMak
+        '
+        Me.cmMak.FormattingEnabled = True
+        Me.cmMak.Items.AddRange(New Object() {"Labial Maybelline ", "Base Super Stay ", "Polvos traslúcidos ", "Sombras James ", "Bronzer wet n wild "})
+        Me.cmMak.Location = New System.Drawing.Point(36, 129)
+        Me.cmMak.Name = "cmMak"
+        Me.cmMak.Size = New System.Drawing.Size(163, 23)
+        Me.cmMak.TabIndex = 3
+        Me.cmMak.Text = "Selecciona una opción"
+        '
+        'cmSkin
+        '
+        Me.cmSkin.FormattingEnabled = True
+        Me.cmSkin.Items.AddRange(New Object() {"Ácido láctico", "Niacinamida", "Crema hidratante ", "Agua micelar", "Bloqueador solar"})
+        Me.cmSkin.Location = New System.Drawing.Point(36, 58)
+        Me.cmSkin.Name = "cmSkin"
+        Me.cmSkin.Size = New System.Drawing.Size(163, 23)
+        Me.cmSkin.TabIndex = 2
+        Me.cmSkin.Text = "Seleccione una opción"
+        '
+        'checkMak
+        '
+        Me.checkMak.AutoSize = True
+        Me.checkMak.Location = New System.Drawing.Point(36, 104)
+        Me.checkMak.Name = "checkMak"
+        Me.checkMak.Size = New System.Drawing.Size(71, 19)
+        Me.checkMak.TabIndex = 1
+        Me.checkMak.Text = "Makeup"
+        Me.checkMak.UseVisualStyleBackColor = True
+        '
+        'checkSkin
+        '
+        Me.checkSkin.AutoSize = True
+        Me.checkSkin.Location = New System.Drawing.Point(36, 33)
+        Me.checkSkin.Name = "checkSkin"
+        Me.checkSkin.Size = New System.Drawing.Size(74, 19)
+        Me.checkSkin.TabIndex = 0
+        Me.checkSkin.Text = "Skincare"
+        Me.checkSkin.UseVisualStyleBackColor = True
         '
         'TabPage1
         '
-        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(610, 340)
+        Me.TabPage1.Size = New System.Drawing.Size(629, 387)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos Personales "
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox2)
+        Me.GroupBox2.Controls.Add(Me.MaskedNum)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.dateTime)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.PictureBox3)
-        Me.GroupBox2.Location = New System.Drawing.Point(397, 26)
+        Me.GroupBox2.Location = New System.Drawing.Point(409, 26)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(192, 308)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Perfil"
         '
-        'MaskedTextBox2
+        'MaskedNum
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(31, 269)
-        Me.MaskedTextBox2.Mask = "0000-0000"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 21)
-        Me.MaskedTextBox2.TabIndex = 20
+        Me.MaskedNum.Location = New System.Drawing.Point(31, 269)
+        Me.MaskedNum.Mask = "0000-0000"
+        Me.MaskedNum.Name = "MaskedNum"
+        Me.MaskedNum.Size = New System.Drawing.Size(100, 21)
+        Me.MaskedNum.TabIndex = 20
         '
         'Label8
         '
@@ -117,13 +332,13 @@ Partial Class Form1
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Número de teléfono"
         '
-        'DateTimePicker1
+        'dateTime
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(31, 189)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(104, 21)
-        Me.DateTimePicker1.TabIndex = 18
+        Me.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateTime.Location = New System.Drawing.Point(31, 189)
+        Me.dateTime.Name = "dateTime"
+        Me.dateTime.Size = New System.Drawing.Size(104, 21)
+        Me.dateTime.TabIndex = 18
         '
         'Label7
         '
@@ -151,12 +366,12 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.CheckBoxMasterCard)
         Me.GroupBox1.Controls.Add(Me.CheckBoxVISA)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox1.Controls.Add(Me.MaskedCredito)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.comboNacionalidad)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.rbMas)
+        Me.GroupBox1.Controls.Add(Me.rbFeme)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtApellido)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -218,13 +433,13 @@ Partial Class Form1
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Tipo de pago:"
         '
-        'MaskedTextBox1
+        'MaskedCredito
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(182, 206)
-        Me.MaskedTextBox1.Mask = "0000 0000 0000 0000"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(134, 21)
-        Me.MaskedTextBox1.TabIndex = 10
+        Me.MaskedCredito.Location = New System.Drawing.Point(182, 206)
+        Me.MaskedCredito.Mask = "0000 0000 0000 0000"
+        Me.MaskedCredito.Name = "MaskedCredito"
+        Me.MaskedCredito.Size = New System.Drawing.Size(134, 21)
+        Me.MaskedCredito.TabIndex = 10
         '
         'Label5
         '
@@ -254,28 +469,28 @@ Partial Class Form1
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Nacionalidad"
         '
-        'RadioButton2
+        'rbMas
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(99, 126)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(82, 19)
-        Me.RadioButton2.TabIndex = 6
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Masculino"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.rbMas.AutoSize = True
+        Me.rbMas.Location = New System.Drawing.Point(99, 126)
+        Me.rbMas.Name = "rbMas"
+        Me.rbMas.Size = New System.Drawing.Size(82, 19)
+        Me.rbMas.TabIndex = 6
+        Me.rbMas.TabStop = True
+        Me.rbMas.Text = "Masculino"
+        Me.rbMas.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'rbFeme
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton1.Location = New System.Drawing.Point(99, 102)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(81, 19)
-        Me.RadioButton1.TabIndex = 5
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Femenino"
-        Me.RadioButton1.UseVisualStyleBackColor = False
+        Me.rbFeme.AutoSize = True
+        Me.rbFeme.BackColor = System.Drawing.Color.Transparent
+        Me.rbFeme.Location = New System.Drawing.Point(99, 102)
+        Me.rbFeme.Name = "rbFeme"
+        Me.rbFeme.Size = New System.Drawing.Size(81, 19)
+        Me.rbFeme.TabIndex = 5
+        Me.rbFeme.TabStop = True
+        Me.rbFeme.Text = "Femenino"
+        Me.rbFeme.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -318,34 +533,80 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
-        'TabPage2
+        'TabControlPrincipal
         '
-        Me.TabPage2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(610, 340)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Compra Producto "
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.TabControlPrincipal.Controls.Add(Me.TabPage1)
+        Me.TabControlPrincipal.Controls.Add(Me.TabPage2)
+        Me.TabControlPrincipal.Location = New System.Drawing.Point(0, 21)
+        Me.TabControlPrincipal.Name = "TabControlPrincipal"
+        Me.TabControlPrincipal.SelectedIndex = 0
+        Me.TabControlPrincipal.Size = New System.Drawing.Size(637, 413)
+        Me.TabControlPrincipal.TabIndex = 0
         '
-        'errorIcono
+        'Panel1
         '
-        Me.errorIcono.ContainerControl = Me
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.Controls.Add(Me.rbCompra)
+        Me.Panel1.Controls.Add(Me.rbDatos)
+        Me.Panel1.Location = New System.Drawing.Point(4, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(629, 48)
+        Me.Panel1.TabIndex = 23
         '
-        'Toolmensaje
+        'rbCompra
         '
-        Me.Toolmensaje.IsBalloon = True
+        Me.rbCompra.Appearance = System.Windows.Forms.Appearance.Button
+        Me.rbCompra.AutoSize = True
+        Me.rbCompra.FlatAppearance.BorderSize = 0
+        Me.rbCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.rbCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.rbCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.rbCompra.Font = New System.Drawing.Font("Century Schoolbook", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCompra.ForeColor = System.Drawing.Color.Black
+        Me.rbCompra.Location = New System.Drawing.Point(221, 10)
+        Me.rbCompra.Name = "rbCompra"
+        Me.rbCompra.Size = New System.Drawing.Size(66, 25)
+        Me.rbCompra.TabIndex = 1
+        Me.rbCompra.Text = "Compra"
+        Me.rbCompra.UseVisualStyleBackColor = True
+        '
+        'rbDatos
+        '
+        Me.rbDatos.Appearance = System.Windows.Forms.Appearance.Button
+        Me.rbDatos.AutoSize = True
+        Me.rbDatos.Checked = True
+        Me.rbDatos.FlatAppearance.BorderSize = 0
+        Me.rbDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.rbDatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.rbDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.rbDatos.Font = New System.Drawing.Font("Century Schoolbook", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbDatos.ForeColor = System.Drawing.Color.Black
+        Me.rbDatos.Location = New System.Drawing.Point(66, 10)
+        Me.rbDatos.Name = "rbDatos"
+        Me.rbDatos.Size = New System.Drawing.Size(117, 25)
+        Me.rbDatos.TabIndex = 0
+        Me.rbDatos.TabStop = True
+        Me.rbDatos.Text = "Datos Generales"
+        Me.rbDatos.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(668, 408)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(637, 408)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.TabControlPrincipal)
         Me.Name = "Form1"
         Me.Text = "Formulario "
-        Me.TabControl1.ResumeLayout(False)
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -354,37 +615,66 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControlPrincipal.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents errorIcono As ErrorProvider
+    Friend WithEvents Toolmensaje As ToolTip
+    Friend WithEvents TabControlPrincipal As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents MaskedNum As MaskedTextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents dateTime As DateTimePicker
+    Friend WithEvents Label7 As Label
+    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents CheckBoxMasterCard As CheckBox
+    Friend WithEvents CheckBoxVISA As CheckBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents MaskedCredito As MaskedTextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents comboNacionalidad As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents rbMas As RadioButton
+    Friend WithEvents rbFeme As RadioButton
     Friend WithEvents Label3 As Label
     Friend WithEvents txtApellido As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents CheckBoxMasterCard As CheckBox
-    Friend WithEvents CheckBoxVISA As CheckBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents MaskedTextBox2 As MaskedTextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Label7 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents errorIcono As ErrorProvider
-    Friend WithEvents Toolmensaje As ToolTip
+    Friend WithEvents Label13 As Label
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnComprar As Button
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents txtTotal As TextBox
+    Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents cmMak As ComboBox
+    Friend WithEvents cmSkin As ComboBox
+    Friend WithEvents checkMak As CheckBox
+    Friend WithEvents checkSkin As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents rbCompra As RadioButton
+    Friend WithEvents rbDatos As RadioButton
+    Friend WithEvents PictureBox4 As PictureBox
+
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
