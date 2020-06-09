@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A12C1E8B-F310-4F80-B253-E0BF741C6E1E}</ProjectGuid>
+    <ProjectGuid>{6F0118DD-855D-48D8-AF97-1EB5F48C7FFB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ejercicio2_formulaCuadratica.My.MyApplication</StartupObject>
-    <RootNamespace>ejercicio2_formulaCuadratica</RootNamespace>
-    <AssemblyName>ejercicio2_formulaCuadratica</AssemblyName>
+    <StartupObject>calculadora.My.MyApplication</StartupObject>
+    <RootNamespace>calculadora</RootNamespace>
+    <AssemblyName>calculadora</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ejercicio2_formulaCuadratica.xml</DocumentationFile>
+    <DocumentationFile>calculadora.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ejercicio2_formulaCuadratica.xml</DocumentationFile>
+    <DocumentationFile>calculadora.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -72,9 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>

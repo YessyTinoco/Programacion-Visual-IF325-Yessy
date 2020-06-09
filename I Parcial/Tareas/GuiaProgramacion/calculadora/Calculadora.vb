@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Calculadora
     Private numero1 As Double = 0.0
     Private numero2 As Double = 0.0
     Private signo As String
@@ -158,3 +158,4 @@
 
     End Sub
 End Class
+

@@ -1,6 +1,10 @@
-﻿Imports System.ComponentModel
+﻿
 
-Public Class Form1
+
+Imports System.ComponentModel
+
+Public Class Formula
+
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         Dim valorA, valorB, valorC As Double
         'Dim x1, x2 As Double
@@ -24,11 +28,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("¿Desea salir?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If (opcion = DialogResult.Yes) Then
-            Me.Close()
-        End If
+        Form1.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -43,13 +44,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub txtA_Validating(sender As Object, e As CancelEventArgs) Handles txtA.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorP.SetError(sender, "")
-        Else
-            Me.errorP.SetError(sender, "Ingrese una cantidad")
-        End If
-    End Sub
+
 
     Private Sub txtA_MouseHover(sender As Object, e As EventArgs) Handles txtA.MouseHover
         ToolTip.SetToolTip(txtA, "Ingrese el coeficiente de término cuadrático")
@@ -63,9 +58,9 @@ Public Class Form1
 
     Private Sub txtB_Validating(sender As Object, e As CancelEventArgs) Handles txtB.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorP.SetError(sender, "")
+            Me.ErrorP.SetError(sender, "")
         Else
-            Me.errorP.SetError(sender, "Ingrese una cantidad")
+            Me.ErrorP.SetError(sender, "Ingrese una cantidad")
         End If
     End Sub
 
@@ -81,9 +76,9 @@ Public Class Form1
 
     Private Sub txtC_Validating(sender As Object, e As CancelEventArgs) Handles txtC.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorP.SetError(sender, "")
+            Me.ErrorP.SetError(sender, "")
         Else
-            Me.errorP.SetError(sender, "Ingrese una cantidad")
+            Me.ErrorP.SetError(sender, "Ingrese una cantidad")
         End If
     End Sub
 
@@ -91,5 +86,13 @@ Public Class Form1
         ToolTip.SetToolTip(txtB, "Ingrese el coeficiente de término independiente")
         ToolTip.ToolTipTitle = "Valor de c"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtA_Validating(sender As Object, e As CancelEventArgs) Handles txtA.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorP.SetError(sender, "")
+        Else
+            Me.ErrorP.SetError(sender, "Ingrese una cantidad")
+        End If
     End Sub
 End Class
